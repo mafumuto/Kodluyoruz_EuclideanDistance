@@ -16,6 +16,7 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
     points = [(3, 4), (6, 8), (7, 24), (8, 6), (10, 10)]
+    print("Points List: ", points)
 
     euclid = EuclideanDistance()
 
@@ -23,41 +24,18 @@ if __name__ == '__main__':
 
     print("Distance list: ", distances)
 
-    Deneme = TrialTree(7.1)
-    Deneme.Add(10.88888888)
-    Deneme.Add(5.5555555555)
-    Deneme.Add(4.4444444444)
-    Deneme.Add(6.0)
-    Deneme.Add(4.1555555555)
-    Deneme.Add(6.4555555555)
-    Deneme.Add(3.5444444444)
-    Deneme.Add(4.2333333333)
-    Deneme.Add(2.4444444444)
-    Deneme.Add(2.8888888888)
-    Deneme.Add(3.8888888888)
-    Deneme.Add(4.8888888888)
-    Deneme.Add(5.8888888888)
-    Deneme.Add(6.8888888888)
-    Deneme.Add(7.8888888888)
-    Deneme.Add(9.8888888888)
-    Deneme.Add(10.8888888888)
-    Deneme.Add(11.8888888888)
-    Deneme.Add(0.8888888888)
-    Deneme.Add(12.8888888888)
-    Deneme.Add(0.68888888888)
-    Deneme.Add(14.8888888888)
-    Deneme.Add(1.48888888888)
-    Deneme.Add(0.78888888888)
-    Deneme.Add(22.8888888888)
-    Deneme.Add(135.8888888888)
-    Deneme.Add(0.48888888888)
-    for i in range(1, 1000):
-        Deneme.Add(i)
+    trialTree = TrialTree(distances[0])
 
-    print("Head value: ", Deneme.GetHeadNode().value)
-    print("head.right value: ", Deneme.GetHeadNode().rightNode.value)
-    print("head.right.up value: ", Deneme.GetHeadNode().rightNode.upNode.value)
-    minDistance1 = Deneme.FindMinValue()
-    print("Minimum Distance: ", minDistance1)
+    index = 0
+    for item in distances:
+        if index != 0:
+            trialTree.Add(item)
+        index += 1
+
+    minDistance = trialTree.FindMinValue()
+
+    # euclid.FindEuclideanDistance(points[0], points[1])
+
+    print("Minimum Distance: ", minDistance)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

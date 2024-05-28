@@ -24,8 +24,6 @@ class TrialTree:
         self.__targetNode = self.__headNode
         self.firstNode = None
         self.lastNode = None
-        print(self.__targetNode)
-        print(self.__targetNode.value)
 
     def Add(self, value):
         self.AddNode(self.__headNode, value)

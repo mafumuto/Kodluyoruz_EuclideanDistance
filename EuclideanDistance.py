@@ -11,16 +11,16 @@ class EuclideanDistance:
             return l2Norm
 
         except ValueError or TypeError:
-            print("Invalid Type {parameter1} or {parameter2} \n\
-              {parameter1} and {parameter2} must be (integer, integer) Tuple. \n\
-              For example {parameter1}=(3,4), {parameter2}=(6,8)".format(parameter1=coordinatePoint1,
-                                                                         parameter2=coordinatePoint2))
+            print("Invalid Type %{parameter1} or %{parameter2} \n\
+              %{parameter1} and %{parameter2} must be (integer, integer) Tuple. \n\
+              For example %{parameter1}=(3,4), %{parameter2}=(6,8)" % {"parameter1": coordinatePoint1,
+                                                                       "parameter2": coordinatePoint2})
 
         except Exception as exc:
-            print("An exception occurred {e}. \n\
-              {parameter1} and {parameter2} must be (integer, integer) Tuple. \n\
-              For example {parameter1}=(3,4), {parameter2}=(6,8)".format(e=exc, parameter1=coordinatePoint1,
-                                                                         parameter2=coordinatePoint2))
+            print("An exception occurred %{e}. \n\
+              %{parameter1} and %{parameter2} must be (integer, integer) Tuple. \n\
+              For example %{parameter1}=(3,4), %{parameter2}=(6,8)" % {"e": exc, "parameter1": coordinatePoint1,
+                                                                       "parameter2": coordinatePoint2})
 
     @staticmethod
     def ListLenght(listArg: list) -> int:
@@ -70,8 +70,8 @@ class EuclideanDistance:
         while listIndex < pointsListLenght:
             while listTargetIndex < pointsListLenght:
                 distance = self.FindEuclideanDistance(points[listIndex], points[listTargetIndex])
-                print("%(1)x. and %(2)x. point between euclid distance: %(dist)f " % {"1": listIndex,
-                                                                                      "2": listTargetIndex,
+                print("%(1)x. and %(2)x. point between euclid distance: %(dist)f " % {"1": listIndex+1,
+                                                                                      "2": listTargetIndex+1,
                                                                                       "dist": distance})
                 distances[distanceListIndex] = distance
 
