@@ -24,13 +24,9 @@ if __name__ == '__main__':
 
     print("Distance list: ", distances)
 
-    trialTree = TrialTree(distances[0])
+    trialTree = TrialTree()
 
-    index = 0
-    for item in distances:
-        if index != 0:
-            trialTree.Add(item)
-        index += 1
+    trialTree.Add(*distances)
 
     minDistance = trialTree.FindMinValue()
 

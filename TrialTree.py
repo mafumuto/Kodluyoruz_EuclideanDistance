@@ -18,15 +18,17 @@ class TrialTree:
         self.firstNode = None
         self.lastNode = None
     '''
-
-    def __init__(self, value: float) -> None:
-        self.__headNode = Node(value)
-        self.__targetNode = self.__headNode
+    def __init__(self) -> None:
+        self.__headNode = None
+        self.__targetNode = None
         self.firstNode = None
         self.lastNode = None
 
-    def Add(self, value):
-        self.AddNode(self.__headNode, value)
+    def Add(self, *values):
+        for value in values:
+            if self.__headNode is None:
+                self.__headNode = Node(value)
+            self.AddNode(self.__headNode, value)
 
     def AddNode(self, CurrentNode: Node, value):
         self.__previousNode = CurrentNode
